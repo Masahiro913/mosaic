@@ -12,8 +12,8 @@ img = cv2.imread("girl.jpg")
 #顔検出を実行し、印をつける
 def face_detect(img):
   img_gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-  face_list = cascade.detectMultiScale(img_gray,minSize=(300,300))
-  #認識した箇所に印をつける
+  face_list = cascade.detectMultiScale(img_gray,minSize=(100,100))
+  #認識した部分に印をつける
   for (x,y,w,h) in face_list:
     print("顔の座標=", x,y,w,h)
     red = (0,0,255)
@@ -31,5 +31,3 @@ for i in range(0,9):
   plt.imshow(cv2.cvtColor(img_r,cv2.COLOR_BGR2RGB))
 
 plt.show()
-
-#赤枠が現れない。。。
